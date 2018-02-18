@@ -5,7 +5,7 @@ import (
 	"net/http"
 )
 
-func indexHandler(w http.ResponseWriter, r *http.Request) {
+func indexHandleR(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, `<h1>Hey there.</h1>
 <p>line one.</p>
 <p>line two.</p>
@@ -14,6 +14,6 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	http.HandleFunc("/", indexHandler)
+	http.HandleFunc("/", indexHandleR)
 	http.ListenAndServe(":8000", nil)
 }
